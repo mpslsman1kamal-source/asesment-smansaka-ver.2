@@ -1,0 +1,34 @@
+/* extra.css — gaya tambahan di luar Tailwind (animasi, cetak, utilitas kecil) */
+html { -webkit-text-size-adjust: 100%; }
+body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+.material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; letter-spacing: normal; text-transform: none; white-space: nowrap; word-wrap: normal; direction: ltr; -webkit-font-feature-settings: 'liga'; font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; line-height: 1; user-select: none; display: inline-block; flex-shrink: 0; }
+.material-symbols-outlined.fill { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.toast-in { animation: toastIn .22s ease-out; transition: opacity .25s; }
+@keyframes toastIn { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: none; } }
+.modal-in { animation: modalIn .15s ease-out; }
+@keyframes modalIn { from { opacity: 0; } to { opacity: 1; } }
+.page-in { animation: pageIn .16s ease-out; }
+@keyframes pageIn { from { opacity: .4; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+.glow-cyan { text-shadow: 0 0 12px rgba(52, 211, 153, .45); }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+.soal-html p { margin: .35rem 0; } .soal-html ul { list-style: disc; padding-left: 1.4rem; } .soal-html ol { list-style: decimal; padding-left: 1.4rem; }
+.soal-html table { border-collapse: collapse; } .soal-html td, .soal-html th { border: 1px solid #cbd5e1; padding: .25rem .5rem; }
+.fs-sm { font-size: .9rem; } .fs-md { font-size: 1rem; } .fs-lg { font-size: 1.2rem; }
+.skel { background: linear-gradient(90deg, #EAF2FC 25%, #DCEAFB 37%, #EAF2FC 63%); background-size: 400% 100%; animation: skel 1.3s ease infinite; }
+@keyframes skel { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
+[hidden] { display: none !important; }
+input[type=checkbox], input[type=radio] { accent-color: #2563eb; }
+@media print {
+  body * { visibility: hidden; }
+  .print-area, .print-area * { visibility: visible; }
+  .print-area { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none !important; border: 0 !important; }
+  .no-print { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* konten soal (HTML tersanitasi dari server) */
+.prose-soal p{margin:0 0 .5rem}.prose-soal ul{list-style:disc;padding-left:1.4rem;margin:.25rem 0}.prose-soal ol{list-style:decimal;padding-left:1.4rem;margin:.25rem 0}
+.prose-soal img{max-width:100%;height:auto;border-radius:.5rem;margin:.5rem 0}.prose-soal table{border-collapse:collapse;margin:.5rem 0}.prose-soal td,.prose-soal th{border:1px solid #c3c6d7;padding:.25rem .6rem}
+.prose-soal sub,.prose-soal sup{font-size:.75em}
+[contenteditable]:empty:before{content:"";}
